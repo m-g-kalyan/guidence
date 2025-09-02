@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Career Guidance — Explore Your Path</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand">
+        <div class="brand-mark">CG</div>
+        <div class="brand-text">
+          <h1>Career Guidance</h1>
+          <p>
+            Discover roadmaps, roles, and real trends for well settled future
+          </p>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <button class="nav-link" data-section="home">Home</button>
+        <button class="nav-link" data-section="courses">Courses</button>
+        <button class="nav-link" data-section="learn">Learn</button>
+        <button class="nav-link" data-section="contact">Contact</button>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          🌓
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HOME -->
+      <section id="home" class="content-section active">
+        <div class="hero">
+          <div class="hero-copy">
+            <h2>Find your perfect tech career</h2>
+            <p>
+              Click any technology card to see roadmaps, career opportunities,
+              and a year‑to‑year trend graph.
+            </p>
+            <div class="stats">
+              <div class="stat">
+                <span id="statTechCount">30</span><small>Technologies</small>
+              </div>
+              <div class="stat">
+                <span>100+</span><small>Career Roles</small>
+              </div>
+              <div class="stat">
+                <span>2019–2025</span><small>Trend Window</small>
+              </div>
+            </div>
+          </div>
+          <div class="hero-banner">
+            <div class="orb orb-a"></div>
+            <div class="orb orb-b"></div>
+            <div class="orb orb-c"></div>
+          </div>
+        </div>
+
+        <div class="promo">
+          <h3>Latest Courses</h3>
+          <ul class="chips">
+            <li class="chip">Full‑Stack with React & Node</li>
+            <li class="chip">Data Science with Python</li>
+            <li class="chip">GenAI Foundations</li>
+            <li class="chip">Cloud DevOps on AWS</li>
+          </ul>
+          <div class="discount">
+            <strong>September Offer:</strong>
+            <span class="badge">30% OFF</span> on all technology tracks.
+          </div>
+        </div>
+      </section>
+
+      <!-- COURSES -->
+      <section id="courses" class="content-section">
+        <div class="toolbar">
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="Search technologies, e.g., Kubernetes, React…"
+          />
+          <select id="categoryFilter">
+            <option value="all">All categories</option>
+          </select>
+          <select id="sortBy">
+            <option value="name-asc">Sort: Name A→Z</option>
+            <option value="trend-desc">Sort: Latest trend ↓</option>
+            <option value="cagr-desc">Sort: CAGR ↓</option>
+          </select>
+        </div>
+
+        <div id="grid" class="grid"></div>
+      </section>
+
+      <!-- LEARN -->
+      <section id="learn" class="content-section">
+        <div class="learn-wrap">
+          <h2>Learning Resources</h2>
+          <p>
+            Each roadmap is crafted to move you from fundamentals to advanced
+            topics with projects and interview‑ready skills.
+          </p>
+          <ol class="roadmap-legend">
+            <li><span>Core</span> → essentials you must know</li>
+            <li><span>Build</span> → make small projects</li>
+            <li><span>Scale</span> → frameworks & architecture</li>
+            <li><span>Deploy</span> → cloud, CI/CD, observability</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="content-section">
+        <h2>Contact</h2>
+        <p>Email: <a href="">marksolutions0512@gmail.com</a></p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2025 Career Guidance. mark pal</p>
+    </footer>
+
+    <!-- MODAL -->
+    <div id="modal" class="modal" aria-hidden="true">
+      <div class="modal-card">
+        <button id="modalClose" class="icon-btn close" aria-label="Close">
+          ✕
+        </button>
+        <div class="modal-head">
+          <div class="modal-icon" id="modalIcon"></div>
+          <div>
+            <h3 id="modalTitle">Technology</h3>
+            <p id="modalSubtitle" class="muted"></p>
+          </div>
+        </div>
+
+        <div class="modal-body">
+          <div class="modal-section">
+            <h4>Roadmap</h4>
+            <ol id="modalRoadmap" class="list"></ol>
+          </div>
+
+          <div class="modal-section two-col">
+            <div>
+              <h4>Career Opportunities</h4>
+              <ul id="modalCareers" class="list"></ul>
+            </div>
+            <div>
+              <h4>Future Trends</h4>
+              <ul id="modalTrends" class="list"></ul>
+            </div>
+          </div>
+
+          <div class="modal-section">
+            <h4>Year‑to‑Year Popularity</h4>
+            <canvas id="trendChart" width="900" height="360"></canvas>
+            <div id="yoySummary" class="yoy"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
